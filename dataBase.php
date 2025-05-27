@@ -38,6 +38,7 @@ class database {
         catch(PDOException $e){
             echo "Erro ao listrar os livros. " . $e->getMessage();
         }
+        
     }
 }
 ?>
