@@ -1,4 +1,6 @@
 <?
+
+use LDAP\Result;
 class database {
     private $host;
     private $db_name;
@@ -23,6 +25,19 @@ class database {
         }
 
         return $conexao;
+    }
+
+    public function listarLivros(){
+        $query = "SELECT * FROM " . $this->tableName;
+        try {
+            $result = $this->conexao->prepare($query);
+            $result->excute();
+
+            $dados = $result->fetchALL(PDO::FETCH_ASSOC);
+        }
+        catch(PDOException $e){
+            echo "Erro ao listrar os livros. " . $e->getMessage();
+        }
     }
 }
 ?>
