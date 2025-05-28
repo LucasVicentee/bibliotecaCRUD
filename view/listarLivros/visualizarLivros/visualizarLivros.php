@@ -6,13 +6,13 @@
     <title>Listar livros</title>
 </head>
 <body>
-    <div id="barra-navegacao">
+    <nav id="barra-navegacao">
         <ul>
             <li><a href="#">Listar livros cadastrados</a></li>
             <li><a href="#">Adicionar novo livro</a></li>
             <li><a href="#">Editar dados de um livro</a></li>
             <li><a href="#">Excluir livro do sistema</a></li>
         </ul>
-    </div>
+    </nav>
 </body>
 </html>

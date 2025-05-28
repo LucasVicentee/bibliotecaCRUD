@@ -1,7 +1,6 @@
-<?
+<?php
 
-use LDAP\Result;
-class database {
+class Database {
     private $host;
     private $db_name;
     private $username;
@@ -16,29 +15,63 @@ class database {
         $this->DBconn = $this->getConnection();
     }
 
-    public function getConnection(){
-        try{
-            $conexao = new PDO("mysql:host={$this->host};dbname={$this->host}",$this->username, $this->password);
-        }
-        catch(PDOException $e){
-            echo "Erro com a conexão do banco de dados." . $e->getMessage();
+    public function getConnection() {
+        try {
+            $conexao = new PDO(
+                "mysql:host={$this->host};dbname={$this->db_name}",
+                $this->username,
+                $this->password
+            );
+            $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        } catch (PDOException $e) {
+            echo "Erro com a conexão do banco de dados: " . $e->getMessage();
         }
 
         return $conexao;
     }
+}
 
-    public function listarLivros(){
+class DBBiblioteca {
+    private $conexao;
+    private $tableName = 'biblioteca';
+
+    public function __construct($conexaoBD) {
+        $this->conexao = $conexaoBD;
+    }
+
+    public function listarLivros() {
         $query = "SELECT * FROM " . $this->tableName;
         try {
             $result = $this->conexao->prepare($query);
-            $result->excute();
+            $result->execute();
+            $dados = $result->fetchAll(PDO::FETCH_ASSOC);
+            return $dados;
+        } catch (PDOException $e) {
+            echo "Erro ao listar os livros: " . $e->getMessage();
+        }
+    }
 
-            $dados = $result->fetchALL(PDO::FETCH_ASSOC);
+    public function adicionarLivro($id, $titulo, $autor, $ano_publicacao, $categoria) {
+        $query = "INSERT INTO " . $this->tableName . " (id, titulo, autor, ano_publicacao, categoria) 
+                  VALUES (:id, :titulo, :autor, :ano_publicacao, :categoria)";
+
+        try {
+            $result = $this->conexao->prepare($query);
+
+            $result->bindParam(':id', $id);
+            $result->bindParam(':titulo', $titulo);
+            $result->bindParam(':autor', $autor);
+            $result->bindParam(':ano_publicacao', $ano_publicacao);
+            $result->bindParam(':categoria', $categoria);
+
+            if ($result->execute()) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "Erro PDO: " . $e->getMessage();
         }
-        catch(PDOException $e){
-            echo "Erro ao listrar os livros. " . $e->getMessage();
-        }
-        
     }
 }
 ?>
