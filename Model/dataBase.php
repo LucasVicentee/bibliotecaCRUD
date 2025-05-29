@@ -98,5 +98,27 @@ class DBBiblioteca {
                 echo "Erro ao atualizar o Livro!" . $e->getMessage();
         }
     }
+
+    public function excluirLivro($id){
+        $query = " DELETE FROM " . $this->tableName . " WHERE id = :id";
+
+        try{
+            $result = $this->conexao->prepare($query);
+
+            $result->bindParam(":id", $id);
+
+            $result->execute();
+
+            if($result->rowCount() > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch(PDOException $e){
+            echo "Livro não encontrado!" . $e->getMessage();
+        }
+    }
 }
 ?>

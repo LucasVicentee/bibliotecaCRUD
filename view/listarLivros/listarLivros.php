@@ -11,7 +11,7 @@
         <ul>    
             <li><a href="../view/adicionarLivro/adicionarLivro.php">Adicionar novo livro</a></li>
             <li><a href="../view/editarLivro/editarLivro.php">Editar dados de um livro</a></li>
-            <li><a href="#">Excluir livro</a></li>
+            <li><a href="/BibliotecaCRUD/view/excluirLivro/excluirLivro.php">Excluir livro</a></li>
         </ul>
     </nav>
 </body>
