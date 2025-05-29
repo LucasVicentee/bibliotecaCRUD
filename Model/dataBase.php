@@ -87,7 +87,7 @@ class DBBiblioteca {
 
             $result->execute();
 
-            if($result->rowCont() > 0){
+            if($result->rowCount() > 0){
                 return true;
             }
             else{

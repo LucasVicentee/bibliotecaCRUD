@@ -17,7 +17,8 @@
 
     <div class="container">
         <h1>Editar livro</h1>
-        <form action="../../Controller/adicionarLivroController.php?action=adicionar" method="POST">
+        <form action="/BibliotecaCRUD/Controller/editarLivroController.php" method="POST">
+            <input type="hidden" name="action" value="editar">
             <label for="id">ID:</label>
             <input type="number" name="id" id="id" class="input-field"><br>
             <label for="titulo">Titulo:</label>
