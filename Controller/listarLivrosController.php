@@ -14,13 +14,13 @@
     $listaLivros = $bdBiblioteca->listarLivros();
 
     if (!empty($listaLivros)) {
-        echo "<ul>";
+        echo "<ul id='lista-livros'>";
         foreach ($listaLivros as $livro){
             echo "<li class='li-cli'>ID: " . $livro['id'] . "<br>" . 
             "Titulo: " . $livro['titulo'] . "<br>" .
             "Autor: " . $livro['autor'] . "<br>" .
             "Data de publicação: " . $livro['ano_publicacao'] . "<br>" .
-            "Categoria: " . $livro['categoria'] . "<li>";
+            "Categoria: " . $livro['categoria'] . "</li>";
         }
         echo "</ul>";
     }

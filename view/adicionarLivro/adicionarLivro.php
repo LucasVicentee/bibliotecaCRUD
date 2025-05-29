@@ -9,7 +9,7 @@
 <body>
     <nav id="barra-navegacao">
         <ul>
-            <li><a href="../listarLivros/listarLivros.php">Listar livros cadastrados</a></li>
+            <li><a href="/BibliotecaCRUD/Controller/listarLivrosController.php">Listar livros cadastrados</a></li>
             <li><a href="#">Editar dados de um livro</a></li>
             <li><a href="#">Excluir livro do sistema</a></li>
         </ul>
@@ -28,6 +28,7 @@
             <input type="text" name="categoria" id="categoria" class="input-field"><br>
             <input type="submit" value="Enviar" class="btn-submit">
         </form>
+        <button id="botao-voltar"><a href="/BibliotecaCRUD/">Voltar</a></button>
     </div>  
 </body>
 </html>

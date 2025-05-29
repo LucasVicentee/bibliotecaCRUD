@@ -40,6 +40,21 @@ body {
   background-color: #555; 
 }
 
-ul {
-    list-style-type: none;
+#lista-livros {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-left: 200px;
+}
+
+.li-cli {
+    border: 20px rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 8px;
+    background-color: transparent;
+    width: 250px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
