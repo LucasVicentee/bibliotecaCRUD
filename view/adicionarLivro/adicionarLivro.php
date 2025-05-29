@@ -10,7 +10,7 @@
     <nav id="barra-navegacao">
         <ul>
             <li><a href="/BibliotecaCRUD/Controller/listarLivrosController.php">Listar livros cadastrados</a></li>
-            <li><a href="#">Editar dados de um livro</a></li>
+            <li><a href="/BibliotecaCRUD/view/editarLivro/editarLivro.php">Editar dados de um livro</a></li>
             <li><a href="#">Excluir livro do sistema</a></li>
         </ul>
     </nav>

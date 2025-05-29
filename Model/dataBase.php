@@ -72,5 +72,31 @@ class DBBiblioteca {
             echo "Erro PDO: " . $e->getMessage();
         }
     }
+
+    public function editarLivro($id, $titulo, $autor, $ano_publicacao, $categoria){
+        $query = ' UPDATE ' . $this->tableName . " SET titulo = :titulo, autor = :autor, ano_publicacao = :ano_publicacao, categoria = :categoria WHERE id = :id";
+
+        try{
+            $result = $this->conexao->prepare($query);
+
+            $result->bindParam(":id", $id);
+            $result->bindParam(":titulo", $titulo);
+            $result->bindParam(":autor", $autor);
+            $result->bindParam(":ano_publicacao", $ano_publicacao);
+            $result->bindParam(":categoria", $categoria);
+
+            $result->execute();
+
+            if($result->rowCont() > 0){
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+        catch(PDOException $e){
+                echo "Erro ao atualizar o Livro!" . $e->getMessage();
+        }
+    }
 }
 ?>
