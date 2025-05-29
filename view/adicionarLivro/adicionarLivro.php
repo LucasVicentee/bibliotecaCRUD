@@ -17,7 +17,8 @@
 
     <div class="container">
         <h1>Adicionar livro</h1>
-        <form action="../../Controller/adicionarLivroController.php?action=adicionar" method="POST">
+        <form action="../../Controller/adicionarLivroController.php" method="POST">
+            <input type="hidden" name="action" value="adicionar">
             <label for="titulo">Titulo:</label>
             <input type="text" name="titulo" id="titulo" class="input-field"><br>
             <label for="autor">Autor:</label>
