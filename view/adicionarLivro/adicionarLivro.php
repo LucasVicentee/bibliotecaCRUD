@@ -15,9 +15,9 @@
         </ul>
     </nav>
 
-    <div class="container">
+    <div id="container">
         <h1>Adicionar livro</h1>
-        <form action="../../Controller/adicionarLivroController.php" method="POST">
+        <form id="formulario" action="/BibliotecaCRUD/Controller/adicionarLivroController.php" method="POST">
             <input type="hidden" name="action" value="adicionar">
             <label for="titulo">Titulo:</label>
             <input type="text" name="titulo" id="titulo" class="input-field"><br>
@@ -25,11 +25,12 @@
             <input type="text" name="autor" id="autor" class="input-field"><br>
             <label for="ano_publicacao">Ano de publicação:</label>
             <input type="date" name="ano_publicacao" id="ano_publicacao" class="input-field"><br>
-            <label for="categoria">categoria:</label>
+            <label for="categoria">Categoria:</label>
             <input type="text" name="categoria" id="categoria" class="input-field"><br>
-            <input type="submit" value="Enviar" class="btn-submit">
+            <input id="botao-enviar" type="submit" value="Enviar" class="btn-submit">
+            <button id="botao-voltar"><a href="/BibliotecaCRUD/">Voltar</a></button>
         </form>
-        <button id="botao-voltar"><a href="/BibliotecaCRUD/">Voltar</a></button>
     </div>  
+    
 </body>
 </html>

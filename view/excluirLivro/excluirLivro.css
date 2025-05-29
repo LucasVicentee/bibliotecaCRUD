@@ -39,3 +39,61 @@ body {
 #barra-navegacao a:hover {
   background-color: #555; 
 }
+
+#container {
+  background-color: transparent;
+  border: 1px solid rgb(0, 0, 0);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: auto;
+  padding: 20px;
+  margin: 700px;  
+}
+
+h1 {
+  text-align: center;
+}
+
+#formulario {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin: 5px 0;
+  gap: 10px;
+}
+
+#botao-voltar {
+  display: block;
+  background-color: transparent;
+  width: 120px;           
+  margin: auto; 
+  text-align: center;
+  border: none;
+  padding: 0;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  margin-top: 30px;
+}
+
+#botao-voltar a {
+  text-decoration: none;
+  color: black;
+  padding: 8px 16px;
+  border: 1px solid #333;
+  border-radius: 4px;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+#botao-voltar a:hover {
+  color: rgb(255, 255, 255);
+  background-color: #333; 
+}
+
+#botao-enviar:hover {
+    background-color: red;
+    color: white;
+}

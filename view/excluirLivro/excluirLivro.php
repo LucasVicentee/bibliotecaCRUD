@@ -15,13 +15,13 @@
         </ul>
     </nav>
 
-    <div class="container">
+    <div id="container">
         <h1>Excluir livro</h1>
-        <form action="../../Controller/excluirLivroController.php" method="POST">
+        <form id="formulario" action="/BibliotecaCRUD/Controller/excluirLivroController.php" method="POST">
             <input type="hidden" name="action" value="excluir">
             <label for="id">Insira o ID do livro que seja excluir:</label>
             <input type="number" name="id" id="id" class="input-field"><br>
-            <input type="submit" value="Enviar" class="btn-submit">
+            <input id="botao-enviar" type="submit" value="Enviar" class="btn-submit">
         </form>
         <button id="botao-voltar"><a href="/BibliotecaCRUD/">Voltar</a></button>
     </div>  
