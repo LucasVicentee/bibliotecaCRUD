@@ -8,21 +8,6 @@ body {
     background: linear-gradient(75deg,rgba(255, 255, 255, 1) 0%, rgba(153, 153, 153, 1) 50%, rgba(61, 61, 61, 1) 100%); 
 }
 
-#informacoes {
-    text-align: center;
-    font-family: Arial, sans-serif;
-}
-
-#informacoes h2 {
-    margin-bottom: 15px;
-    color: rgb(0, 0, 0);
-}
-
-#informacoes p {
-    margin: 5px 0;
-    color: rgb(0, 0, 0);
-}
-
 #barra-navegacao {
   position: fixed;       
   top: 0;                
@@ -53,4 +38,8 @@ body {
 
 #barra-navegacao a:hover {
   background-color: #555; 
+}
+
+ul {
+    list-style-type: none;
 }

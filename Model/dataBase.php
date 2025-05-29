@@ -51,14 +51,13 @@ class DBBiblioteca {
         }
     }
 
-    public function adicionarLivro($id, $titulo, $autor, $ano_publicacao, $categoria) {
-        $query = "INSERT INTO " . $this->tableName . " (id, titulo, autor, ano_publicacao, categoria) 
-                  VALUES (:id, :titulo, :autor, :ano_publicacao, :categoria)";
+    public function adicionarLivro($titulo, $autor, $ano_publicacao, $categoria) {
+        $query = "INSERT INTO " . $this->tableName . " (titulo, autor, ano_publicacao, categoria) 
+                  VALUES (:titulo, :autor, :ano_publicacao, :categoria)";
 
         try {
             $result = $this->conexao->prepare($query);
 
-            $result->bindParam(':id', $id);
             $result->bindParam(':titulo', $titulo);
             $result->bindParam(':autor', $autor);
             $result->bindParam(':ano_publicacao', $ano_publicacao);
